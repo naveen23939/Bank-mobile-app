@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: accounts
+
+  profiles:
+    active: prod
+
+  config:
+    import: optional:configserver:http://configserver-ms:8071
+
+  datasource:
+    url: jdbc:mysql://accountdb:3306/accountdb
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  sql:
+    init:
+      mode: never
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -1,0 +1,30 @@
+package com.bank.card.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.*;
+
+
+@Entity
+@Getter@Setter@ToString
+@AllArgsConstructor@NoArgsConstructor
+public class Card extends BaseEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long cardid;
+
+    private String cardNumber;
+
+    private String mobileNumber;
+
+    private String cardType;
+
+    private int totelLimit;
+
+    private int amountUsed;
+
+    private int avalableAmount;
+}
